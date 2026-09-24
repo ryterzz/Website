@@ -43,3 +43,34 @@ nav {
 .nav-links a:hover {
     color: #fff;
 }
+.hero {
+    min-height: 550px;
+
+    display: flex;
+    align-items: center;
+}
+
+.small-text {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+h1 {
+    font-size: 76px;
+    letter-spacing: -4px;
+    margin: 0;
+}
+
+h1 span {
+    color: #8b5cf6;
+}
+
+.intro-text {
+    color: #888;
+    font-size: 17px;
+    line-height: 1.7;
+
+    max-width: 550px;
+    margin-top: 25px;
+}
