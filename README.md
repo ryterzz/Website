@@ -1,5 +1,3 @@
 # Ryder's Website
 
-My personal website.
-
-Made with HTML and CSS.
+// fuck you john 
