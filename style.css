@@ -475,6 +475,3 @@ footer {
         padding: 22px 18px;
     }
 }
-body {
-    animation: pageLoad 0.4s ease;
-}
