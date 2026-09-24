@@ -1,3 +1,3 @@
 # Ryder's Website
 
-// fuck you john 
+fuk u john
