@@ -3,151 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryder</title>
+    <title>Ryter</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<header>
+    <a class="logo" href="index.html">ryter</a>
+
     <nav>
-        <div class="nav-left">ryder</div>
-        <div class="nav-right">
-            <a href="#about">about</a>
-            <a href="#interests">stuff i like</a>
-            <a href="#contact">contact</a>
-        </div>
+        <a class="active" href="index.html">home</a>
+        <a href="about.html">about</a>
+        <a href="gaming.html">gaming</a>
+        <a href="anime.html">anime</a>
+        <a href="coding.html">coding</a>
     </nav>
+</header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-text">
-                <p class="small-text">hey, i'm</p>
-                <h1>ryder<span>.</span></h1>
-                <p class="description">
-                    i'm a gamer, football player, and i'm currently
-                    learning how to code. most of my free time is
-                    spent playing games, watching anime, or messing
-                    around with something on my computer.
-                </p>
 
-                <div class="buttons">
-                    <a href="#about" class="button">about me</a>
-                    <a href="#contact" class="button second">contact</a>
-                </div>
-            </div>
+<main class="home">
 
-            <div class="pfp-container">
-                <img src="pfp.png" alt="Ryter">
-            </div>
-        </section>
+    <div class="home-left">
+        <p class="muted">hey, i'm</p>
 
-        <section id="about" class="section">
-            <p class="section-label">01 / about</p>
-            <h2>a little about me</h2>
+        <h1>Ryter<span>.</span></h1>
 
-            <p>
-                i'm 15 and i've been playing football for around 4 years.
-                i mainly play defensive end, and football is something
-                i've gotten pretty into over time.
-            </p>
+        <p class="home-text">
+            i'm 15, i play football, a lot of games, watch way too much
+            anime, and i'm currently learning how to code.
+        </p>
 
-            <p>
-                outside of football, i'm usually playing games or doing
-                something on my computer. i've also been homeschooled
-                for around 3 months now.
-            </p>
+        <div class="home-links">
+            <a href="about.html">more about me →</a>
+            <a href="gaming.html">what i play →</a>
+        </div>
+    </div>
 
-            <p>
-                i'm currently learning coding too. i'm mostly working
-                with HTML and starting to learn Python. i'm still pretty
-                new to it, but i like making random stuff and seeing
-                what i can actually build.
-            </p>
-        </section>
+    <div class="home-right">
+        <img src="pfp.png" alt="Ryter">
+    </div>
 
-        <section id="interests" class="section">
-            <p class="section-label">02 / things i like</p>
-            <h2>what i'm usually doing</h2>
+</main>
 
-            <div class="interests">
-                <div class="interest">
-                    <span class="number">01</span>
-                    <div>
-                        <h3>football</h3>
-                        <p>DE is my main position. i've been playing for about 4 years.</p>
-                    </div>
-                </div>
 
-                <div class="interest">
-                    <span class="number">02</span>
-                    <div>
-                        <h3>minecraft</h3>
-                        <p>i play a lot of pvp servers, mostly modern versions, but i'll still mess around with 1.8 pvp sometimes.</p>
-                    </div>
-                </div>
+<footer>
+    <span>ryter</span>
+    <span>nashville, tn</span>
+</footer>
 
-                <div class="interest">
-                    <span class="number">03</span>
-                    <div>
-                        <h3>other games</h3>
-                        <p>roblox, CS2, random fps games, anime games, and pretty much whatever looks fun.</p>
-                    </div>
-                </div>
-
-                <div class="interest">
-                    <span class="number">04</span>
-                    <div>
-                        <h3>anime</h3>
-                        <p>i've been watching anime for basically as long as i can remember. there's way too many shows to list here.</p>
-                    </div>
-                </div>
-
-                <div class="interest">
-                    <span class="number">05</span>
-                    <div>
-                        <h3>coding</h3>
-                        <p>currently i only know HTML, CSS and a little JavaScript, im learning Python and slowly figuring out what i'm doing.</p>
-                    </div>
-                </div>
-
-                <div class="interest">
-                    <span class="number">06</span>
-                    <div>
-                        <h3>CS2</h3>
-                        <p>i play sometimes.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="anime-section">
-            <div>
-                <p class="section-label">03 / anime</p>
-                <h2>yes, i watch way too much anime</h2>
-                <p>
-                    i've been watching anime for years and it's probably
-                    one of my biggest interests outside of gaming.
-                </p>
-
-                <a href="https://anilist.co/user/ryter/" target="_blank" class="anime-link">
-                    view my AniList →
-                </a>
-            </div>
-        </section>
-
-        <section id="contact" class="section contact">
-            <p class="section-label">04 / contact</p>
-            <h2>wanna talk?</h2>
-            <p>you can find me on Discord.</p>
-
-            <button id="discordButton">ryterzalt</button>
-            <p id="copied" class="copied"></p>
-        </section>
-    </main>
-
-    <footer>
-        <p>by ryder <span id="year"></span></p>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
