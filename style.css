@@ -20,7 +20,7 @@ a {
 }
 
 
-
+/* HEADER */
 
 header {
     max-width: 1000px;
@@ -64,7 +64,7 @@ nav a.active {
 }
 
 
-
+/* MAIN */
 
 main {
     max-width: 1000px;
@@ -74,7 +74,7 @@ main {
 }
 
 
-
+/* HOME */
 
 .home {
     min-height: calc(100vh - 70px);
@@ -151,7 +151,7 @@ main {
 }
 
 
-
+/* NORMAL PAGES */
 
 .page {
     min-height: calc(100vh - 70px);
@@ -206,7 +206,7 @@ main {
 }
 
 
-
+/* ABOUT */
 
 .quick-info {
     display: grid;
@@ -252,7 +252,7 @@ main {
 }
 
 
-
+/* GAMING */
 
 .game-list {
     max-width: 720px;
@@ -304,7 +304,7 @@ main {
 }
 
 
-
+/* ANIME */
 
 .anime-content {
     max-width: 680px;
@@ -340,7 +340,7 @@ main {
 }
 
 
-
+/* CODING */
 
 .languages {
     display: grid;
@@ -388,7 +388,7 @@ main {
 }
 
 
-
+/* FOOTER */
 
 footer {
     max-width: 1000px;
@@ -407,7 +407,7 @@ footer {
 }
 
 
-
+/* MOBILE */
 
 @media (max-width: 700px) {
 
