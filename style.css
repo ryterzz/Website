@@ -101,7 +101,10 @@ main {
 }
 
 .home-left {
+    position: relative;
     max-width: 620px;
+    padding-left: 24px;
+    border-left: 2px solid var(--accent);
 }
 
 .muted {
@@ -118,7 +121,8 @@ main {
 .home h1 {
     margin: 0;
 
-    font-size: 76px;
+    color: #f5e9ed;
+    font-size: 82px;
     line-height: 1;
 
     letter-spacing: -4px;
@@ -192,8 +196,9 @@ main {
 
     object-fit: cover;
 
-    border: 1px solid #6b4350;
+    border: 2px solid var(--accent);
     border-radius: 50%;
+    box-shadow: 10px 10px 0 #2a1820;
 }
 
 
@@ -223,6 +228,15 @@ main {
     line-height: 1.05;
 
     letter-spacing: -2px;
+}
+
+.page h1::after {
+    content: "";
+    display: block;
+    width: 54px;
+    height: 2px;
+    margin-top: 22px;
+    background: var(--accent);
 }
 
 .page-intro {
@@ -499,7 +513,11 @@ a:focus-visible {
     }
 
     .home h1 {
-        font-size: 58px;
+        font-size: 62px;
+    }
+
+    .home-left {
+        padding-left: 18px;
     }
 
     .page {
