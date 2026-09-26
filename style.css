@@ -11,6 +11,16 @@
     --accent-soft: #f6dce5;
 }
 
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --background: #171216;
+    --ink: #f4e8ec;
+    --muted: #c4abb4;
+    --line: #403038;
+    --accent: #f39ab8;
+    --accent-soft: #3b2630;
+}
+
 html {
     scroll-behavior: smooth;
     color-scheme: light;
@@ -78,6 +88,23 @@ nav a.active {
 nav a.active {
     border-bottom: 1px solid var(--accent);
     padding-bottom: 6px;
+}
+
+.theme-toggle {
+    padding: 0 0 6px;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
 }
 
 
