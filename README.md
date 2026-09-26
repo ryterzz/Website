@@ -1,3 +1,3 @@
 # Ryder's Website
 
-fuk u john
+John is lwk tuff
