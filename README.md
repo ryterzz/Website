@@ -1,3 +1,3 @@
 # Ryder's Website
 
-John is lwk tuff
+John is lwk tuff (NOT)
