@@ -9,6 +9,9 @@
     --line: #ead9df;
     --accent: #bd3e6b;
     --accent-soft: #f6dce5;
+    --glass: rgba(255, 255, 255, 0.58);
+    --glass-edge: rgba(255, 255, 255, 0.82);
+    --glass-shadow: 0 18px 50px rgba(95, 46, 64, 0.1);
 }
 
 :root[data-theme="dark"] {
@@ -19,6 +22,9 @@
     --line: #403038;
     --accent: #f39ab8;
     --accent-soft: #3b2630;
+    --glass: rgba(39, 27, 34, 0.68);
+    --glass-edge: rgba(255, 255, 255, 0.12);
+    --glass-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
 }
 
 html {
@@ -29,8 +35,13 @@ html {
 body {
     margin: 0;
     overflow-x: hidden;
+    min-height: 100vh;
 
-    background: var(--background);
+    background:
+        radial-gradient(ellipse at 12% 8%, rgba(246, 220, 229, 0.9), transparent 36rem),
+        radial-gradient(ellipse at 92% 42%, rgba(234, 215, 247, 0.66), transparent 34rem),
+        radial-gradient(ellipse at 38% 96%, rgba(255, 230, 222, 0.65), transparent 32rem),
+        var(--background);
     color: var(--ink);
 
     font-family: Arial, Helvetica, sans-serif;
@@ -44,17 +55,25 @@ a {
 
 
 header {
-    max-width: 1000px;
-    min-height: 76px;
+    position: sticky;
+    top: 14px;
+    z-index: 5;
+    max-width: 1040px;
+    min-height: 70px;
 
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: 14px auto 0;
+    padding: 12px 20px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    border-bottom: 1px solid var(--line);
+    border: 1px solid var(--glass-edge);
+    border-radius: 20px;
+    background: var(--glass);
+    box-shadow: var(--glass-shadow);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    backdrop-filter: blur(20px) saturate(150%);
 }
 
 .logo {
@@ -86,25 +105,27 @@ nav a.active {
 }
 
 nav a.active {
-    border-bottom: 1px solid var(--accent);
-    padding-bottom: 6px;
+    padding: 8px 12px;
+    border: 1px solid var(--glass-edge);
+    border-radius: 999px;
+    background: var(--accent-soft);
 }
 
 .theme-toggle {
-    padding: 0 0 6px;
-    border: 0;
-    border-bottom: 1px solid var(--line);
-    background: transparent;
-    color: var(--muted);
+    padding: 8px 12px;
+    border: 1px solid var(--glass-edge);
+    border-radius: 999px;
+    background: var(--glass);
+    color: var(--ink);
     font: inherit;
     font-size: 12px;
     cursor: pointer;
-    transition: color 0.2s ease, border-color 0.2s ease;
+    transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 
 .theme-toggle:hover {
-    border-color: var(--accent);
     color: var(--accent);
+    transform: translateY(-1px);
 }
 
 
@@ -120,18 +141,25 @@ main {
 
 
 .home {
-    min-height: calc(100vh - 130px);
+    min-height: calc(100vh - 120px);
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
-    gap: 50px;
+    gap: clamp(36px, 8vw, 100px);
 }
 
 .home-left {
     position: relative;
-    max-width: 620px;
+    max-width: 650px;
+    padding: clamp(28px, 5vw, 56px);
+    border: 1px solid var(--glass-edge);
+    border-radius: 28px;
+    background: var(--glass);
+    box-shadow: var(--glass-shadow);
+    -webkit-backdrop-filter: blur(22px) saturate(145%);
+    backdrop-filter: blur(22px) saturate(145%);
 }
 
 .muted {
@@ -196,19 +224,22 @@ main {
 }
 
 .home-links a {
-    padding: 0 0 4px;
-
-    border-bottom: 1px solid var(--accent);
+    padding: 11px 15px;
+    border: 1px solid var(--glass-edge);
+    border-radius: 999px;
+    background: var(--glass);
     color: var(--ink);
 
     text-decoration: none;
     font-size: 13px;
 
-    transition: color 0.2s ease, border-color 0.2s ease;
+    transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 .home-links a:hover {
     color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
 }
 
 .home-right {
@@ -223,9 +254,9 @@ main {
 
     object-fit: cover;
 
-    border: 1px solid var(--line);
-    border-radius: 2px;
-    box-shadow: 12px 12px 0 var(--accent-soft);
+    border: 1px solid var(--glass-edge);
+    border-radius: 24px;
+    box-shadow: var(--glass-shadow);
 }
 
 
@@ -281,8 +312,13 @@ main {
     max-width: 680px;
 
     margin-top: 38px;
-    padding: 22px 0 0;
-    border-top: 1px solid var(--line);
+    padding: 26px;
+    border: 1px solid var(--glass-edge);
+    border-radius: 22px;
+    background: var(--glass);
+    box-shadow: var(--glass-shadow);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    backdrop-filter: blur(18px) saturate(140%);
 }
 
 .content p:last-child {
@@ -351,16 +387,26 @@ main {
     max-width: 720px;
 
     margin-top: 45px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
 }
 
 .game {
-    padding: 22px 0;
-
-    border-top: 1px solid var(--line);
+    min-height: 150px;
+    padding: 22px;
+    border: 1px solid var(--glass-edge);
+    border-radius: 20px;
+    background: var(--glass);
+    box-shadow: var(--glass-shadow);
+    -webkit-backdrop-filter: blur(16px) saturate(135%);
+    backdrop-filter: blur(16px) saturate(135%);
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.game:last-child {
-    border-bottom: 1px solid var(--line);
+.game:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
 }
 
 .game-title {
@@ -407,9 +453,13 @@ main {
 }
 
 .anime-text {
-    padding-left: 20px;
-
-    border-left: 2px solid var(--accent-soft);
+    padding: 26px;
+    border: 1px solid var(--glass-edge);
+    border-radius: 22px;
+    background: var(--glass);
+    box-shadow: var(--glass-shadow);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    backdrop-filter: blur(18px) saturate(140%);
 }
 
 .anime-text p {
@@ -425,8 +475,11 @@ main {
     color: var(--accent);
     text-decoration: none;
     font-size: 13px;
-    border-bottom: 1px solid var(--accent);
-    padding-bottom: 5px;
+    display: inline-block;
+    padding: 10px 13px;
+    border: 1px solid var(--glass-edge);
+    border-radius: 999px;
+    background: var(--glass);
 }
 
 .external-link:hover {
@@ -441,7 +494,7 @@ main {
 
     grid-template-columns: repeat(2, 1fr);
 
-    gap: 35px;
+    gap: 16px;
 
     max-width: 700px;
 
@@ -449,9 +502,18 @@ main {
 }
 
 .languages div {
-    padding-top: 18px;
+    padding: 20px;
+    border: 1px solid var(--glass-edge);
+    border-radius: 18px;
+    background: var(--glass);
+    box-shadow: var(--glass-shadow);
+    -webkit-backdrop-filter: blur(15px) saturate(135%);
+    backdrop-filter: blur(15px) saturate(135%);
+    transition: transform 0.2s ease;
+}
 
-    border-top: 1px solid var(--line);
+.languages div:hover {
+    transform: translateY(-2px);
 }
 
 .languages span {
@@ -493,7 +555,7 @@ footer {
     display: flex;
     justify-content: space-between;
 
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--glass-edge);
 
     color: var(--muted);
 
@@ -583,8 +645,43 @@ a:focus-visible {
         padding: 22px 18px;
     }
 
+    .home {
+        gap: 28px;
+    }
+
+    .home-left {
+        padding: 26px;
+        border-radius: 22px;
+    }
+
+    .home-right img {
+        width: 150px;
+        height: 176px;
+        border-radius: 18px;
+    }
+
+    .game-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .game {
+        min-height: 0;
+        padding: 20px;
+    }
+
     .content {
-        padding-top: 18px;
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .anime-text {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .languages div {
+        padding: 18px;
     }
 }
 
