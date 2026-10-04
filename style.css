@@ -51,6 +51,19 @@ a {
     color: inherit;
 }
 
+.reading-progress {
+    position: fixed;
+    inset: 0 auto auto 0;
+    z-index: 20;
+    width: 100%;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left center;
+    pointer-events: none;
+}
+
+
 .skip-link {
     position: fixed;
     top: 12px;

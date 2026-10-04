@@ -91,3 +91,28 @@ if (localTime) {
     updateLocalTime();
     setInterval(updateLocalTime, 30_000);
 }
+
+const readingProgress = document.createElement("div");
+readingProgress.className = "reading-progress";
+readingProgress.setAttribute("aria-hidden", "true");
+document.body.prepend(readingProgress);
+
+let progressUpdateQueued = false;
+
+function updateReadingProgress() {
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
+
+    readingProgress.style.transform = `scaleX(${Math.min(progress, 1)})`;
+    progressUpdateQueued = false;
+}
+
+window.addEventListener("scroll", () => {
+    if (!progressUpdateQueued) {
+        progressUpdateQueued = true;
+        window.requestAnimationFrame(updateReadingProgress);
+    }
+}, { passive: true });
+
+window.addEventListener("resize", updateReadingProgress);
+updateReadingProgress();
