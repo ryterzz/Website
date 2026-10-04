@@ -87,6 +87,47 @@ a {
     display: none;
 }
 
+.not-found {
+    min-height: calc(100vh - 150px);
+    display: grid;
+    place-items: center;
+}
+
+.not-found-card {
+    width: min(100%, 650px);
+    padding: clamp(32px, 7vw, 72px);
+    border: 1px solid var(--glass-edge);
+    border-radius: 28px;
+    background: var(--glass);
+    box-shadow: var(--glass-shadow);
+    -webkit-backdrop-filter: blur(22px) saturate(145%);
+    backdrop-filter: blur(22px) saturate(145%);
+}
+
+.not-found-card h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    letter-spacing: -0.06em;
+}
+
+.not-found-card > p:not(.page-label) {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.not-found-link {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    margin-top: 12px;
+    padding: 0 18px;
+    border: 1px solid var(--glass-edge);
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--ink);
+    text-decoration: none;
+}
+
 
 .skip-link {
     position: fixed;
