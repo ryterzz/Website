@@ -1,8 +1,9 @@
 
 const themeToggle = document.querySelector(".theme-toggle");
 const savedTheme = localStorage.getItem("theme");
+const prefersDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-if (savedTheme === "dark") {
+if (savedTheme === "dark" || (!savedTheme && prefersDarkTheme)) {
     document.documentElement.dataset.theme = "dark";
 }
 
