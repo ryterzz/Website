@@ -73,3 +73,21 @@ if (genreButtons.length > 0) {
         });
     });
 }
+
+const localTime = document.querySelector("#local-time");
+
+if (localTime) {
+    const updateLocalTime = () => {
+        const now = new Date();
+
+        localTime.dateTime = now.toISOString();
+        localTime.textContent = new Intl.DateTimeFormat("en-US", {
+            hour: "numeric",
+            minute: "2-digit",
+            timeZone: "America/Chicago"
+        }).format(now);
+    };
+
+    updateLocalTime();
+    setInterval(updateLocalTime, 30_000);
+}
