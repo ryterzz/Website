@@ -63,6 +63,30 @@ a {
     pointer-events: none;
 }
 
+.back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 10;
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    border: 1px solid var(--glass-edge);
+    border-radius: 50%;
+    background: var(--glass);
+    box-shadow: var(--glass-shadow);
+    color: var(--ink);
+    cursor: pointer;
+    font: inherit;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.back-to-top[hidden] {
+    display: none;
+}
+
 
 .skip-link {
     position: fixed;

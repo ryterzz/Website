@@ -116,3 +116,23 @@ window.addEventListener("scroll", () => {
 
 window.addEventListener("resize", updateReadingProgress);
 updateReadingProgress();
+
+const backToTop = document.createElement("button");
+backToTop.className = "back-to-top";
+backToTop.type = "button";
+backToTop.setAttribute("aria-label", "Back to top");
+backToTop.textContent = "↑";
+backToTop.hidden = true;
+document.body.append(backToTop);
+
+function updateBackToTop() {
+    backToTop.hidden = window.scrollY < 400;
+}
+
+window.addEventListener("scroll", updateBackToTop, { passive: true });
+backToTop.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+    });
+});
