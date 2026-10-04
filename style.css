@@ -36,6 +36,7 @@ body {
     margin: 0;
     overflow-x: hidden;
     min-height: 100vh;
+    isolation: isolate;
 
     background:
         radial-gradient(ellipse at 12% 8%, rgba(246, 220, 229, 0.9), transparent 36rem),
@@ -45,6 +46,34 @@ body {
     color: var(--ink);
 
     font-family: Arial, Helvetica, sans-serif;
+}
+
+body::before {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse at 18% 24%, rgba(205, 188, 255, 0.42), transparent 44%),
+        radial-gradient(ellipse at 82% 36%, rgba(255, 205, 223, 0.34), transparent 42%),
+        radial-gradient(ellipse at 46% 82%, rgba(255, 221, 202, 0.3), transparent 46%);
+    background-size: 200% 200%;
+    animation: background-drift 32s ease-in-out infinite alternate;
+    content: "";
+    pointer-events: none;
+}
+
+:root[data-theme="dark"] body::before {
+    opacity: 0.48;
+}
+
+@keyframes background-drift {
+    from {
+        background-position: 0% 0%;
+    }
+
+    to {
+        background-position: 100% 100%;
+    }
 }
 
 a {
@@ -880,6 +909,10 @@ a:focus-visible {
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
+    }
+
+    body::before {
+        animation: none;
     }
 
     *,
