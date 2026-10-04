@@ -24,3 +24,25 @@ themeToggle.addEventListener("click", () => {
     localStorage.setItem("theme", isDark ? "light" : "dark");
     updateThemeToggle();
 });
+
+const gameSearch = document.querySelector("#game-search-input");
+
+if (gameSearch) {
+    const games = [...document.querySelectorAll(".game")];
+    const gameCount = document.querySelector("#game-search-count");
+
+    gameSearch.addEventListener("input", () => {
+        const searchTerm = gameSearch.value.trim().toLowerCase();
+        let visibleGames = 0;
+
+        games.forEach((game) => {
+            const matches = game.textContent.toLowerCase().includes(searchTerm);
+            game.hidden = !matches;
+            visibleGames += Number(matches);
+        });
+
+        gameCount.textContent = visibleGames === 0
+            ? "no games found"
+            : `${visibleGames} ${visibleGames === 1 ? "game" : "games"}`;
+    });
+}
