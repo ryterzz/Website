@@ -16,15 +16,17 @@
 
 <body>
 
+<a class="skip-link" href="#main-content">skip to content</a>
+
 <header>
 
     <a class="logo" href="index.html">Ryder</a>
 
-    <nav>
+    <nav aria-label="Main navigation">
     <a href="index.html">home</a>
     <a href="about.html">about</a>
     <a href="gaming.html">gaming</a>
-    <a class="active" href="anime.html">anime</a>
+    <a class="active" href="anime.html" aria-current="page">anime</a>
     <a href="coding.html">coding</a>
     <a href="music.html">music</a>
     <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">dark mode</button>
@@ -33,7 +35,7 @@
 </header>
 
 
-<main class="page anime-page">
+<main class="page anime-page" id="main-content">
 
     <p class="page-label">anime</p>
 
