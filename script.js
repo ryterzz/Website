@@ -46,3 +46,29 @@ if (gameSearch) {
             : `${visibleGames} ${visibleGames === 1 ? "game" : "games"}`;
     });
 }
+
+const genreButtons = [...document.querySelectorAll("[data-genre-filter]")];
+
+if (genreButtons.length > 0) {
+    const genres = [...document.querySelectorAll("[data-genre]")];
+    const genreCount = document.querySelector("#genre-count");
+
+    genreButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const selectedGenre = button.dataset.genreFilter;
+            let visibleGenres = 0;
+
+            genreButtons.forEach((filterButton) => {
+                filterButton.setAttribute("aria-pressed", filterButton === button);
+            });
+
+            genres.forEach((genre) => {
+                const matches = selectedGenre === "all" || genre.dataset.genre === selectedGenre;
+                genre.hidden = !matches;
+                visibleGenres += Number(matches);
+            });
+
+            genreCount.textContent = `${visibleGenres} ${visibleGenres === 1 ? "genre" : "genres"}`;
+        });
+    });
+}

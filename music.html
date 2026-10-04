@@ -68,9 +68,19 @@
     </div>
 
 
+    <div class="genre-filter" role="group" aria-label="Filter music genres">
+        <button type="button" data-genre-filter="all" aria-pressed="true">all</button>
+        <button type="button" data-genre-filter="rock" aria-pressed="false">rock</button>
+        <button type="button" data-genre-filter="metal" aria-pressed="false">metal</button>
+        <button type="button" data-genre-filter="rnb" aria-pressed="false">R&amp;B</button>
+        <button type="button" data-genre-filter="rap" aria-pressed="false">rap</button>
+    </div>
+
+    <p class="genre-count" id="genre-count" aria-live="polite">4 genres</p>
+
     <div class="languages">
 
-        <div>
+        <div data-genre="rock">
             <span>01</span>
             <strong>Rock</strong>
             <p>
@@ -78,7 +88,7 @@
             </p>
         </div>
 
-        <div>
+        <div data-genre="metal">
             <span>02</span>
             <strong>Metal</strong>
             <p>
@@ -86,7 +96,7 @@
             </p>
         </div>
 
-        <div>
+        <div data-genre="rnb">
             <span>03</span>
             <strong>R&B</strong>
             <p>
@@ -94,7 +104,7 @@
             </p>
         </div>
 
-        <div>
+        <div data-genre="rap">
             <span>04</span>
             <strong>Rap</strong>
             <p>
